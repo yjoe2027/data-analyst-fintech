@@ -1,6 +1,6 @@
 # Project Proposal
 
-**Name:** [Your name]
+**Name:** Yubin Joe
 
 **Project Name:** Fintech Equity Analytics — Trading Volume & Fundamentals Pipeline
 
