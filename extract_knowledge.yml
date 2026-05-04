@@ -1,0 +1,54 @@
+name: Extract Knowledge (Firecrawl → Investopedia)
+
+on:
+  schedule:
+    # Runs every Sunday at midnight UTC
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Reason for manual run'
+        required: false
+        default: 'Manual trigger'
+
+jobs:
+  extract-knowledge:
+    name: Firecrawl → knowledge/raw/
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Firecrawl extraction
+        env:
+          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+        run: python extract/firecrawl_to_knowledge.py
+
+      - name: Commit new knowledge files
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add knowledge/raw/
+          git diff --staged --quiet || git commit -m "chore: auto-update knowledge/raw/ [skip ci]"
+          git push
+
+      - name: Log success
+        if: success()
+        run: echo "✅ Knowledge extraction completed at $(date -u)"
+
+      - name: Log failure
+        if: failure()
+        run: echo "❌ Knowledge extraction FAILED at $(date -u)"
