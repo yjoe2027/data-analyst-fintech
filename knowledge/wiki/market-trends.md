@@ -45,15 +45,12 @@ Family banking carries additional regulatory constraints not covered by the raw 
 
 ## Gaps in this knowledge base
 
-This wiki was built from sources dated 2020–2021 (a16z essays) and a 2026-scraped Investopedia overview. Notable absences:
+Notable absences after the 2026-05-07 scrape batch:
 
 - No Greenlight-specific press releases, blog posts, or product announcements
 - No market data from 2023–2026 (family fintech growth, churn benchmarks, funding rounds)
-- No CAC or LTV benchmarks for family fintech or consumer subscription apps
-- No coverage of banking-as-a-service partner failures (e.g., Synapse filed for bankruptcy in 2024, affecting neobanks relying on its infrastructure)
+- No coverage of banking-as-a-service partner failures (e.g., Synapse filed for bankruptcy in 2024)
 - No analysis of post-iOS 14 ATT impact on mobile attribution for consumer fintech
 - No competitive teardowns of Step, Copper, or FamZoo at a product or business model level
 
-These gaps define the next scraping priorities for `knowledge/raw/`.
-
-> Background: gap inventory based on source dates and known industry events (e.g., Synapse bankruptcy 2024) — not drawn from raw source files.
+> Background: gap inventory based on source dates and known industry events — not drawn from raw source files.
