@@ -44,3 +44,29 @@ When querying the knowledge base, Claude Code should:
 Run `dbt run` from `dbt_project/` to rebuild all models.
 Run `dbt test` to validate data quality.
 Profiles are configured via environment variables (see `.env.example`).
+
+## Knowledge Base Schema
+
+Three operations govern the `knowledge/` directory:
+
+### Ingest — when new files land in `knowledge/raw/`
+
+1. Read the new file and identify which wiki pages it's relevant to (`overview`, `key-players`, `market-trends`, `marketing-analytics`).
+2. Add sourced claims to the relevant wiki page(s) using `> Source: filename.md` citations.
+3. Add the file to the Raw Sources table in `knowledge/index.md`.
+4. If the file fills a gap listed in `market-trends.md` → Gaps section, remove that bullet.
+
+### Query — when answering questions about fintech, Greenlight, or the role
+
+1. Read `knowledge/index.md` to locate the right wiki page.
+2. Read the wiki page — answer from there when possible.
+3. If the wiki lacks detail, fall back to the raw source(s) cited on that page.
+4. Always name the wiki page or raw file the answer draws from.
+5. If the knowledge base doesn't cover it, say so explicitly — do not fill gaps by hallucinating.
+
+### Lint — periodic consistency checks
+
+1. Every `> Source: filename.md` citation in a wiki page must point to a real file in `knowledge/raw/`. Flag broken citations.
+2. Every file in `knowledge/raw/` must appear in the Raw Sources table in `knowledge/index.md`. Flag unlisted files.
+3. Every wiki page in `knowledge/wiki/` must be linked from `knowledge/index.md`. Flag missing links.
+4. Every claim in a wiki page must carry either a `> Source:` or `> Background:` label — no unlabeled assertions.
