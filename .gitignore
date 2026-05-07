@@ -138,11 +138,17 @@ celerybeat.pid
 .env
 .envrc
 .venv
+.venv312/
 env/
 venv/
 ENV/
 env.bak/
 venv.bak/
+
+# dbt
+dbt_project/dbt_packages/
+dbt_project/.user.yml
+dbt_project/target/
 
 # Spyder project settings
 .spyderproject

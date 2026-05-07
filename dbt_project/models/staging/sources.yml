@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: raw
+    database: "{{ env_var('SNOWFLAKE_DATABASE') }}"
+    schema: RAW
+    tables:
+      - name: weather_raw
+        description: Raw weather readings from WeatherAPI
+        columns:
+          - name: id
+            tests: [unique, not_null]
+          - name: location_name
+            tests: [not_null]
+          - name: temp_c
+            tests: [not_null]
+          - name: extracted_at
+            tests: [not_null]

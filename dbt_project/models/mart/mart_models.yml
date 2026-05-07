@@ -1,0 +1,60 @@
+version: 2
+
+models:
+  - name: dim_location
+    description: One row per city tracked by the pipeline
+    columns:
+      - name: location_key
+        tests: [unique, not_null]
+      - name: location_name
+        tests: [unique, not_null]
+      - name: financial_market
+        tests: [not_null]
+
+  - name: dim_date
+    description: One row per extraction date observed in the pipeline
+    columns:
+      - name: date_key
+        tests: [unique, not_null]
+
+  - name: dim_condition
+    description: Weather condition categories with behavioral finance sentiment metadata
+    columns:
+      - name: condition_key
+        tests: [unique, not_null]
+      - name: condition_category
+        tests: [unique, not_null]
+      - name: market_sentiment_bias
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Positive', 'Slightly Negative', 'Negative', 'Very Negative', 'Neutral']
+      - name: trading_activity_score
+        tests:
+          - not_null
+          - accepted_values:
+              values: [1, 2, 3, 4, 5]
+
+  - name: fact_weather_readings
+    description: Central fact table — one row per weather reading
+    columns:
+      - name: reading_key
+        tests: [unique, not_null]
+      - name: location_key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_location')
+              field: location_key
+      - name: date_key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_date')
+              field: date_key
+      - name: condition_key
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_condition')
+              field: condition_key

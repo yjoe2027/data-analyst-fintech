@@ -1,0 +1,17 @@
+name: 'fintech_weather'
+version: '1.0.0'
+config-version: 2
+
+profile: 'fintech_weather'
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+
+models:
+  fintech_weather:
+    staging:
+      +materialized: view
+      +schema: STAGING
+    mart:
+      +materialized: table
+      +schema: MART

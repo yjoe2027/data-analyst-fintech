@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_weather
+    description: Cleaned and enriched weather readings from WeatherAPI
+    columns:
+      - name: weather_id
+        tests: [unique, not_null]
+      - name: location_name
+        tests: [not_null]
+      - name: temp_c
+        tests: [not_null]
+      - name: condition_category
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Clear', 'Cloudy', 'Rainy', 'Snowy', 'Foggy', 'Stormy', 'Other']
