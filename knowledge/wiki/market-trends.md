@@ -55,3 +55,5 @@ This wiki was built from sources dated 2020–2021 (a16z essays) and a 2026-scra
 - No competitive teardowns of Step, Copper, or FamZoo at a product or business model level
 
 These gaps define the next scraping priorities for `knowledge/raw/`.
+
+> Background: gap inventory based on source dates and known industry events (e.g., Synapse bankruptcy 2024) — not drawn from raw source files.
