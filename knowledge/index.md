@@ -14,7 +14,7 @@
 | [overview.md](wiki/overview.md) | What family fintech is and where Greenlight sits |
 | [key-players.md](wiki/key-players.md) | Greenlight + competitors, market structure |
 | [market-trends.md](wiki/market-trends.md) | Growth drivers, Gen Z behavior, regulatory context |
-| [marketing-analytics.md](wiki/marketing-analytics.md) | CAC, LTV, attribution, CRM — role vocabulary |
+| [marketing-analytics.md](wiki/marketing-analytics.md) | CAC, LTV, attribution, CRM, acquisition strategy — role vocabulary |
 
 ---
 

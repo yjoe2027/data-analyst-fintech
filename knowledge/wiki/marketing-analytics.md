@@ -10,6 +10,20 @@
 
 **Payback period** — the number of months until cumulative gross margin from a cohort of acquired customers equals the CAC paid to acquire them. More meaningful than CAC alone for subscription businesses because it incorporates churn. A $60 CAC with $5/month gross margin at 5% monthly churn has a very different health profile than $60 CAC with $10/month gross margin at 2% churn.
 
+## Acquisition strategy in family fintech
+
+**Unit of acquisition is a family, not an individual.** A parent who signs up and adds three children is one customer acquired for CAC purposes. Acquisition funnels are optimized to convert the parent — the product must signal immediate household value (parental controls, allowance automation) to close that conversion.
+
+**Channel mix.** Greenlight's Marketing Science team tracks ROAS across five channel types: Meta, Google, CTV, affiliates, and OOH. Upper-funnel channels (CTV, OOH) build awareness among parents; lower-funnel channels (Google search, Meta retargeting) close intent. Attribution across this mix requires MMM for upper-funnel channels and pixel-based or probabilistic models for lower-funnel ones.
+
+**Structural tailwinds that reduce acquisition cost.** Two demand signals lower the persuasion cost per impression:
+- Only 28% of Gen Z and millennials trust banks — families are actively looking for alternatives.
+- Gen Z parents want products that build financial literacy habits in their children. Greenlight's positioning (earn, save, spend wisely, invest) maps directly to this preference, reducing creative friction.
+
+**Structural risk: non-fintech entrants at near-zero CAC.** A platform with an existing family user base (education, entertainment, gaming) could embed banking features and acquire families at marginal cost. Greenlight, which depends on paid acquisition, cannot compete on CAC economics against a platform entrant of that kind.
+
+> Source: `03-a16z-fintech-gen-z-millennials.md`, `02-a16z-every-company-will-be-fintech.md`, `01-a16z-rise-of-many-consumer-fintech.md` + Background
+
 ## Retention and lifetime value
 
 **LTV (Lifetime Value)** — for a subscription + interchange business:
