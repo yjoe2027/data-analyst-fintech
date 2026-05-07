@@ -6,9 +6,9 @@ An end-to-end analytics pipeline exploring how weather conditions in key financi
 
 ## Job Posting
 
-**Role:** Data Analyst  
-**Company:** [Target Company]  
-**Link:** [URL]  
+**Role:** Associate Data Analyst  
+**Company:** [Greenlight Financial Technology](https://jobs.lever.co/greenlight/beded9c4-6acf-4fcc-8aa9-8870555d2bfb)  
+**Link:** https://jobs.lever.co/greenlight/beded9c4-6acf-4fcc-8aa9-8870555d2bfb  
 
 This project demonstrates end-to-end data engineering and analytical skills: API integration, cloud data warehousing, dimensional modeling with dbt, pipeline orchestration with GitHub Actions, and interactive dashboard development — all applied to a real fintech domain question.
 
@@ -147,9 +147,7 @@ erDiagram
 
 ## Dashboard Preview
 
-> 📸 _Add a screenshot of your deployed Streamlit dashboard here_
-
-**Live Dashboard:** [https://your-app.streamlit.app](https://your-app.streamlit.app)
+**Live Dashboard:**
 
 ---
 
