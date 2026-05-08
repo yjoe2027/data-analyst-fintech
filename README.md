@@ -33,49 +33,21 @@ This project demonstrates end-to-end data engineering and analytical skills: API
 ```mermaid
 flowchart LR
     subgraph Sources
-        A[WeatherAPI\nREST API]
-        B[Investopedia\nFirecrawl scrape]
+        A["WeatherAPI (REST API)"]
+        B["Investopedia (Firecrawl)"]
     end
-
-    subgraph Extract["Extract (Python)"]
+    subgraph Extract
         C[weather_to_snowflake.py]
         D[firecrawl_to_knowledge.py]
     end
-
-    subgraph Raw["Raw Layer (Snowflake)"]
-        E[(WEATHER_RAW)]
-    end
-
-    subgraph KB["Knowledge Base"]
-        F[knowledge/raw/\n15+ sources]
-        G[knowledge/wiki/\nClaude Code wiki]
-    end
-
-    subgraph Staging["Staging (dbt views)"]
-        H[stg_weather]
-    end
-
-    subgraph Mart["Mart (dbt tables)"]
-        I[dim_location]
-        J[dim_date]
-        K[dim_condition]
-        L[fact_weather_readings]
-    end
-
-    subgraph Consume["Consume"]
-        M[🌐 Streamlit Dashboard]
-        N[🤖 Claude Code Queries]
-    end
-
-    subgraph Orchestration["Orchestration"]
-        O[GitHub Actions\n3 workflows]
-    end
-
-    A --> C --> E --> H
-    H --> I & J & K --> L
-    L --> M
-    B --> D --> F --> G --> N
-    O -.->|schedules| C & D
+    A --> C
+    B --> D
+    C --> E[(Snowflake Raw)]
+    D --> F[knowledge/raw/]
+    E --> G[dbt staging]
+    G --> H[dbt mart]
+    H --> I[Streamlit Dashboard]
+    F --> J[Claude Code Knowledge Base]
 ```
 
 ---
@@ -147,7 +119,7 @@ erDiagram
 
 ## Dashboard Preview
 
-**Live Dashboard:**
+**Live Dashboard:** [Deploy to Streamlit Community Cloud - link pending]
 
 ---
 
