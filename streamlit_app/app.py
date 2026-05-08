@@ -282,7 +282,7 @@ with col_f:
     st.markdown("#### 🌬️ Wind Speed vs Comfort Score by City")
     fig_wind = px.scatter(
         df, x="wind_kph", y="weather_comfort_score",
-        color="location_name", trendline="ols",
+        color="location_name",
         facet_col="location_name",
         color_discrete_map={
             "New York": "#58a6ff",
