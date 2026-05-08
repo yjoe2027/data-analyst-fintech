@@ -119,7 +119,7 @@ erDiagram
 
 ## Dashboard Preview
 
-**Live Dashboard:** [Deploy to Streamlit Community Cloud - link pending]
+**Live Dashboard:** https://data-analyst-fintech-sy6vtx7zk7q8grhdzkmmhk.streamlit.app
 
 ---
 
