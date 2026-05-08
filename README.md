@@ -59,20 +59,20 @@ erDiagram
     FACT_WEATHER_READINGS {
         varchar reading_key PK
         varchar location_key FK
-        date    date_key FK
+        date date_key FK
         varchar condition_key FK
-        int     weather_id
-        float   temp_c
-        float   temp_f
-        float   feelslike_c
-        float   temp_feels_delta_c
-        int     humidity
-        float   uv
+        int weather_id
+        float temp_c
+        float temp_f
+        float feelslike_c
+        float temp_feels_delta_c
+        int humidity
+        float uv
         varchar uv_risk
-        float   wind_mph
-        float   wind_kph
+        float wind_mph
+        float wind_kph
         varchar comfort_level
-        float   weather_comfort_score
+        float weather_comfort_score
         boolean is_extreme_weather
         timestamp extracted_at
     }
@@ -82,22 +82,22 @@ erDiagram
         varchar location_name
         varchar region
         varchar country
-        float   lat
-        float   lon
+        float lat
+        float lon
         varchar financial_market
         varchar timezone
         varchar primary_currency
     }
 
     DIM_DATE {
-        date    date_key PK
-        int     year
-        int     month
-        int     day
-        int     day_of_week
+        date date_key PK
+        int year
+        int month
+        int day
+        int day_of_week
         varchar day_name
         varchar month_name
-        int     quarter
+        int quarter
         boolean is_weekday
         boolean is_weekend
     }
@@ -107,11 +107,11 @@ erDiagram
         varchar condition_category
         varchar example_condition_text
         varchar market_sentiment_bias
-        int     trading_activity_score
+        int trading_activity_score
     }
 
-    FACT_WEATHER_READINGS }o--|| DIM_LOCATION  : "location_key"
-    FACT_WEATHER_READINGS }o--|| DIM_DATE      : "date_key"
+    FACT_WEATHER_READINGS }o--|| DIM_LOCATION : "location_key"
+    FACT_WEATHER_READINGS }o--|| DIM_DATE : "date_key"
     FACT_WEATHER_READINGS }o--|| DIM_CONDITION : "condition_key"
 ```
 
